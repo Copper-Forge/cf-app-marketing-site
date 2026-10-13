@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ContactForm } from "@/components/contact-form";
@@ -21,7 +21,7 @@ export default function Home() {
               priority
             />
           </a>
-          <nav aria-label="Primary Navigation" className="hidden md:block">
+          <nav aria-label="Primary Navigation" className="hidden lg:block">
             <ul className="flex items-center gap-6 text-sm uppercase tracking-[0.2em] text-steel-300">
               {siteContent.navigation.map((item) => (
                 <li key={item.href}>
@@ -164,6 +164,39 @@ export default function Home() {
           </div>
         </Section>
 
+        <Section
+          id="clients"
+          title={siteContent.clients.title}
+          intro={siteContent.clients.intro}
+        >
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {siteContent.clients.items.map((project) => (
+              <li key={project.name}>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.name} website (opens in a new tab)`}
+                  className="group block overflow-hidden rounded-2xl border border-charcoal-800 bg-charcoal-900/65 transition hover:border-copper-700/60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper-accent-400"
+                >
+                  <div className="relative h-56 bg-white">
+                    <Image
+                      src={project.logo}
+                      alt={`${project.name} logo`}
+                      fill
+                      sizes="(min-width: 1024px) 350px, (min-width: 640px) 50vw, 100vw"
+                      className="object-contain p-6"
+                    />
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-steel-400">
+            {siteContent.clients.note}
+          </p>
+        </Section>
+
         <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
           <div className="grid gap-10 rounded-3xl border border-charcoal-800 bg-charcoal-900/80 p-7 lg:grid-cols-[0.85fr_1.15fr] lg:p-10">
             <div className="space-y-5">
@@ -207,7 +240,7 @@ type SectionProps = {
 
 function Section({ id, title, intro, children }: SectionProps) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
+    <section id={id} className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20 lg:px-8">
       <div className="mb-10 max-w-3xl">
         <p className="font-heading text-sm uppercase tracking-[0.25em] text-copper-accent-400">
           {id}

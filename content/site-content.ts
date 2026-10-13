@@ -7,6 +7,7 @@
     { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
     { label: "About", href: "#about" },
+    { label: "Clients", href: "#clients" },
     { label: "Contact", href: "#contact" },
   ],
   hero: {
@@ -58,6 +59,20 @@
         name: "Technical Strategy",
         description:
           "Translate business goals into a clear technical direction, phased roadmap, and execution plan.",
+      },
+    ],
+  },
+  clients: {
+    title: "Successful Engagements",
+    intro:
+      "We're proud to serve clients across industries and deliver for them when it counts.",
+    note:
+      "Client names and logos featured here and do not imply endorsement of Copper Forge.",
+    items: [
+      {
+        name: "Superstructures",
+        logo: "/SuperStructures-logo.png",
+        href: "https://www.superstructures.com/",
       },
     ],
   },
