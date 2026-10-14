@@ -67,7 +67,7 @@
     intro:
       "We're proud to serve clients across industries and deliver for them when it counts.",
     note:
-      "Client names and logos featured here and do not imply endorsement of Copper Forge.",
+      "Client names and logos featured here do not imply endorsement of Copper Forge.",
     items: [
       {
         name: "Superstructures",
